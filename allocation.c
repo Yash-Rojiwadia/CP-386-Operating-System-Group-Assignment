@@ -5,7 +5,6 @@
 #include <pthread.h>
 #include <sys/stat.h>
 #include <time.h>
-#include <semaphore.h>
 #include <stdbool.h>
 
 # define MAX 10
@@ -33,15 +32,10 @@ typedef struct h
 
 } Holes;
 
-int allocate_mem (Process *all_process[], Process *full_process[], char *process, int process_size, int index){
-    int i = 0;
-    while (i < MAX){
-        if (full_process[i] != NULL && strcmp(full_process[i],process)){
-            
-        }
-        i++;
+int allocate_mem (){
+   
     }
-}
+
 
 int main(int argc, char *argv[]) {
     char input;
@@ -49,17 +43,14 @@ int main(int argc, char *argv[]) {
     Process *p = NULL;
     Holes *h = NULL;
 
+    printf("Allocated %d bytes of memory.\n", input);
+
+
     printf("command>");
 
-    while (1) 
-    {
-        if (strcmp(input,p->command)) {
+    
 
-        }
-        else if (strcmp(input,p->command)) {
-            
-        }
-    }
+   
     
 }
 
