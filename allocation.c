@@ -37,21 +37,21 @@ int allocate_mem (){
    
     }
 
-char** inputstr(char * userinput){
-    size_t i = 0;
-    char *str_array[] = {};
-    for (int j=0;j<3;j++){
-        char * str_temp = "" ;
-        char * strtemp2 = "";
-        while (userinput[i] != '\0' && isspace(userinput[i]) ) {       /* Stop looping when we reach the null-character. */
-            strcat(str_temp,itoa(i,strtemp2,10));
-            //printf("%c\n", userinput[i]);    /* Print each character of the string. */
-            i++;
-        }
-        strcat(str_array, str_temp);
-    }
-    return str_array;
-}
+// char** inputstr(char * userinput){
+//     size_t i = 0;
+//     char *str_array[] = {};
+//     for (int j=0;j<3;j++){
+//         char * str_temp = "" ;
+//         char * strtemp2 = "";
+//         while (userinput[i] != '\0' && isspace(userinput[i]) ) {       /* Stop looping when we reach the null-character. */
+//             strcat(str_temp,itoa(i,strtemp2,10));
+//             //printf("%c\n", userinput[i]);    /* Print each character of the string. */
+//             i++;
+//         }
+//         strcat(str_array, str_temp);
+//     }
+//     return str_array;
+// }
 
 void main(int argc, char *argv[]) {
     char input;
@@ -61,9 +61,9 @@ void main(int argc, char *argv[]) {
 
     printf("Allocated %d bytes of memory.\n", input);
 
-    char ** temp = inputstr("RQ P3 1200000 B");
-    printf("results : %c",temp) ;
-    printf("\n");
+    //char ** temp = inputstr("RQ P3 1200000 B");
+    //printf("results : %s",temp) ;
+    //printf("\n");
     printf("command>");
 
     
