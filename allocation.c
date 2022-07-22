@@ -21,10 +21,10 @@ typedef struct p
 int insert_process (Process *all_process[], Process *full_process[], char *process, int process_size, int index){
     int i = 0;
     while (i < MAX){
-        if (full_process[i] != NULL && strcmp(full_process[])){
-
+        if (full_process[i] != NULL && strcmp(full_process[i],process)){
+            
         }
-        i++
+        i++;
     }
 }
 
