@@ -6,6 +6,7 @@
 #include <sys/stat.h>
 #include <time.h>
 #include <stdbool.h>
+#include <ctype.h>
 
 # define MAX 10
 
@@ -36,8 +37,21 @@ int allocate_mem (){
    
     }
 
+char** inputstr(char * userinput){
+    size_t i = 0;
+    char *str_array[] = {};
+    for (int j=0;j<3;j++){
+        char * str_temp= "" ;
+        while (userinput[i] != '\0' && isspace(userinput[i]) ) {       /* Stop looping when we reach the null-character. */
+            strcat(str_temp,i);
+            //printf("%c\n", userinput[i]);    /* Print each character of the string. */
+            i++;
+        }
+        strcpy(str_array, str_temp);
+    }
+}
 
-int main(int argc, char *argv[]) {
+void main(int argc, char *argv[]) {
     char input;
     input = atoi(argv[1]);
     Process *p = NULL;
@@ -45,7 +59,8 @@ int main(int argc, char *argv[]) {
 
     printf("Allocated %d bytes of memory.\n", input);
 
-
+    char ** temp = inputstr("RQ P3 1200000 B");
+    printf("results : %s",temp) ;
     printf("command>");
 
     
