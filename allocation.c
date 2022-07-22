@@ -33,6 +33,20 @@ typedef struct h
 
 } Holes;
 
+typedef struct allocation 
+{
+    char command[100];
+    char pid[100];
+    int memNeeded;
+    char format[20];
+    int iPID;
+
+    int firstIndex; 
+    int lastIndex;
+    int length;
+
+} Allocation; 
+
 int allocate_mem (){
    
     }
@@ -66,9 +80,33 @@ void main(int argc, char *argv[]) {
     //printf("\n");
     printf("command>");
 
-    
+    //get user input
+    do {
+        
+        printf("command>");
 
-   
-    
+        //read until usr presses enter
+        fgets(usrInput, 30, stdin);
+        char *token;
+        token = strtok(usrInput, " ");
+        int j = 0;
+
+        while (token != NULL){
+            if (j == 0){
+                strcpy(userArrgs.command, token);
+                uppercase(userArrgs.command);
+            }else if (j == 1){
+                strcpy(userArrgs.pid, token);
+                uppercase(userArrgs.pid);
+                userArrgs.iPID = (int) userArrgs.pid[1];
+            }else if (j == 2){
+                userArrgs.memNeeded = (int) atoi(token);
+            }else if(j == 3){
+                strcpy(userArrgs.format, token); 
+                uppercase(userArrgs.format);  
+            }
+            j++;
+            token = strtok(NULL, " ");  
+        }
+
 }
-
