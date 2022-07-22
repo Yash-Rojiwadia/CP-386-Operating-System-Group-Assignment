@@ -88,14 +88,10 @@ void main(int argc, char *argv[]) {
     //printf("\n");
     printf("command>");
 
-<<<<<<< HEAD
-
-=======
     //get user input
     do {
         
         printf("command>");
->>>>>>> 844df7faa0cad2dd23c6deb7b1638a332ce8d693
 
         //read until usr presses enter
         fgets(usrInput, 30, stdin);
