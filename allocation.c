@@ -19,12 +19,20 @@ const char *status = "STATUS";
 typedef struct p
 {
     char command[10];
-    char number_p[3];
     int size;
     int start;
     int end;
     
 } Process;
+
+typedef struct allocation
+{
+    char command[10];
+    char p_number[3];
+    long n
+
+};
+
 
 typedef struct h
 {
@@ -66,7 +74,7 @@ void main(int argc, char *argv[]) {
     //printf("\n");
     printf("command>");
 
-    
+
 
    
     
