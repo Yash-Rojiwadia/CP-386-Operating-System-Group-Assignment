@@ -10,15 +10,30 @@
 
 # define MAX 10
 
+const char *rq = "RQ";
+const char *rl = "RL";
+const char *c = "C";
+const char *status = "STATUS";
+const char *exit = "EXIT";
+
 typedef struct p
 {
-    char command;
+    char command[10];
+    char number_p[3];
     int size;
     int start;
     int end;
+    
 } Process;
 
-int insert_process (Process *all_process[], Process *full_process[], char *process, int process_size, int index){
+typedef struct h
+{
+    int holes;
+    int partitions;
+
+} Holes;
+
+int allocate_mem (Process *all_process[], Process *full_process[], char *process, int process_size, int index){
     int i = 0;
     while (i < MAX){
         if (full_process[i] != NULL && strcmp(full_process[i],process)){
@@ -29,7 +44,22 @@ int insert_process (Process *all_process[], Process *full_process[], char *proce
 }
 
 int main(int argc, char *argv[]) {
-    int input;
+    char input;
     input = atoi(argv[1]);
+    Process *p = NULL;
+    Holes *h = NULL;
+
+    printf("command>");
+
+    while (1) 
+    {
+        if (strcmp(input,p->command)) {
+
+        }
+        else if (strcmp(input,p->command)) {
+            
+        }
+    }
+    
 }
 
