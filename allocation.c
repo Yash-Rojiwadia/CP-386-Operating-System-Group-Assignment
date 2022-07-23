@@ -62,7 +62,7 @@ static void empty_stat(int num);
 
 
 static void empty_stat(int num){
-        
+
 }
 
 void stat(int num) {
@@ -75,7 +75,55 @@ void stat(int num) {
             }      
 }
 
+void bestfit(Allocation *aloc, int *table_memory, int num) {
+    int temp; 
+    bool found = false;
+    int mem_size = aloc->mem;
+    int counter = 0;
 
+    for (temp = 0; temp < num; temp++) {
+
+        for ( counter; counter < mem_size; counter++) {
+            if (table_memory[temp] == -1) {
+                counter++;
+            }
+            else {
+                counter = 0;
+                aloc->f_index = temp + 1;
+            }
+            if (counter == aloc->mem) {
+                aloc->l_index = temp;
+                found = true;
+                break; 
+            }
+            
+        }
+        
+    }
+    aloc->l_index++;
+
+    if (found != true) {
+        printf("Couldn't find a hole big enough to the required size.\n");
+
+    }
+    else {
+        printf("Successfully allocated %d to process %c%d \n", aloc->mem, aloc->p_letter, aloc->p_number);
+        int i = aloc->f_index;
+        while (i < aloc->l_index) {
+            table_memory[i] = aloc->p_number;
+            i++;
+        }
+       p[a_count].start = aloc->f_index;
+       p[a_count].end = aloc->l_index;
+       strcpy(p[a_count].command, aloc->command);
+       a_count++;
+
+       alloc += aloc->l_index - aloc->f_index; 
+    }
+    
+
+
+}
 
 // char** inputstr(char * userinput){
 //     size_t i = 0;
