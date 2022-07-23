@@ -13,6 +13,9 @@ const char *rq = "RQ";
 const char *rl = "RL";
 const char *c = "C";
 const char *status = "STATUS";
+const char *first = "F";
+const char *best = "B"; 
+const char *worst = "W"; 
 //const char *exit = "EXIT";
 
 typedef struct p
@@ -75,10 +78,15 @@ void main(int argc, char *argv[]) {
     //char ** temp = inputstr("RQ P3 1200000 B");
     //printf("results : %s",temp) ;
     //printf("\n");
-   
+    int table_memory [num];
+    int i = 0;
+    while (i<num){
+        table_memory[i] = -1 ;
+        i++;
+    }
 
-    //get user input
-    char another_inp[] = {}; 
+    char next_input[] = {}; 
+        
     do {
         
         printf("command>");
@@ -109,13 +117,34 @@ void main(int argc, char *argv[]) {
             j++;
             token = strtok(NULL, " ");  
         }
+    if (! strncmp(aloc.command, rq, strlen(rq)) ){
+        if (! strncmp(aloc.algo, first, strlen(first))){
+            //firstfit();
+        }
+        else if (! strncmp(aloc.algo, best, strlen(best)))
+        {
+            /* bestfit(); */
+        }
+        else if (! strncmp(aloc.algo, worst, strlen(worst)))
+        {
+            /* worstfit(); */
+        }
+        
+        
+    }
+    else if (! strncmp(aloc.command, rl, strlen(rl)))
+    {
+        //release_mem ();
+    }
+    else if (! strncmp(aloc.command, status, strlen(status)))
+    {
+        /* stat (); */
+    }
+    
+    
 
     }while (1);
 
-    int table_memory [num];
-    int i = 0;
-    while (i<num){
-        table_memory[i] = -1 ;
-    }
+    
 
 }
