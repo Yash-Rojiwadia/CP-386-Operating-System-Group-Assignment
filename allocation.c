@@ -8,7 +8,6 @@
 #include <stdbool.h>
 #include <ctype.h>
 
-# define MAX 10
 
 const char *rq = "RQ";
 const char *rl = "RL";
@@ -115,5 +114,12 @@ void main(int argc, char *argv[]) {
             token = strtok(NULL, " ");  
         }
 
+    }while (1);
+
+    int table_memory [num];
+    int i = 0;
+    while (i<num){
+        table_memory[i] = -1 ;
     }
+
 }
