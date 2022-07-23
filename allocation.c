@@ -44,14 +44,6 @@ typedef struct allocation
     int length;
 } Allocation;
 
-
-typedef struct h
-{
-    int holes;
-    int partitions;
-
-} Holes;
-
 int alloc; 
 int total_a_count;
 int a_count;
@@ -143,6 +135,28 @@ void firstfit(Allocation *aloc, int *table_memory, int num) {
                 temp = 0;
                 flag = true;
                 break;
+            }
+            
+        }
+        if (!flag) {
+            printf("couldn't find a big enough hole to the required size of process. \n");
+        }
+    }
+}
+void worstfit(Allocation *aloc, int *table_memory, int num) {
+    int temp = 0;
+    int worstID = -1; 
+    int counter = 0;
+    bool flag = false;
+    for (int i = 0; i < num; i ++) {
+        
+        for (int j = 0; j < aloc->mem; j++) {
+            temp ++;
+            if (counter >= p->size) {
+                if (worstID == -1) {
+
+                }
+                
             }
             
         }
