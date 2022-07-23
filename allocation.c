@@ -18,6 +18,8 @@ const char *best = "B";
 const char *worst = "W"; 
 //const char *exit = "EXIT";
 
+
+
 typedef struct p
 {
     char command[10];
@@ -26,6 +28,9 @@ typedef struct p
     int end;
     
 } Process;
+
+Process *p = NULL;
+Process *p1 = NULL;
 
 typedef struct allocation
 {
@@ -47,6 +52,29 @@ typedef struct h
 
 } Holes;
 
+int alloc; 
+int total_a_count;
+int a_count;
+
+//functions
+void stat(int num);
+static void empty_stat(int num);
+
+
+static void empty_stat(int num){
+        
+}
+
+void stat(int num) {
+    printf("Partitions [Allocated memory = %d]:\n", alloc);
+            for (int i = 0 ; i < a_count; i++){
+                if (strcmp(p[i].command, "Free") != 0){
+                    printf("Address [%d:%d] Process %s\n", p[i].start, p[i].end, p[i].command);  
+                }
+                       
+            }      
+}
+
 
 
 // char** inputstr(char * userinput){
@@ -64,8 +92,8 @@ typedef struct h
 //     }
 //     return str_array;
 // }
-Process *p = NULL;
-Holes *h = NULL;
+
+
 
 void main(int argc, char *argv[]) {
    
