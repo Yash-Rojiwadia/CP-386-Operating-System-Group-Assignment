@@ -50,11 +50,25 @@ int a_count;
 
 //functions
 void stat(int num);
-static void empty_stat(int num);
+static void empty_stat(int *table_memory,int num);
 
 
-static void empty_stat(int num){
+static void empty_stat(int *table_memory,int num){
+    int counter = 0;
 
+    for (int i = 0; i < num ; i++){
+        if (table_memory[i] == -1){
+            p1[total_a_count].start = i;
+
+            while (table_memory[i] == -1){
+                counter ++;
+                i++;
+            }
+            p1[total_a_count].end = i-1 ;
+            p1[total_a_count].size = p1[total_a_count].end - p1[total_a_count].start + 1;
+            total_a_count ++ ;
+        }
+    }
 }
 
 void stat(int num) {
@@ -65,6 +79,34 @@ void stat(int num) {
                 }
                        
             }      
+}
+
+void release_mem (Allocation *aloc,int *table_memory,int num){
+    bool flag = false;
+    int a = 0;
+    int b = 0;
+
+    while (a < num && !flag){
+        if (table_memory[a] == aloc->p_number){
+            printf("releasing memory for process %c%d", aloc->p_letter,aloc->p_number);
+            b=a;
+            while (table_memory[b] == aloc->p_number){
+                table_memory[b] = -1;
+                b++;
+            }
+            printf("Successfully released memory for process %c%d",aloc->p_letter,aloc->p_number);
+            flag = true;
+        }
+        a++;
+    }
+    int i = 0 ;
+    while (i<a_count)
+    {
+       if (! strncmp(p[i].command,aloc->command, 2)){
+        strcpy(p[i].command, "Free");
+       }
+    }
+    alloc -= b ;
 }
 
 void bestfit(Allocation *aloc, int *table_memory, int num) {
