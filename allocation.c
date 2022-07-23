@@ -125,6 +125,10 @@ void bestfit(Allocation *aloc, int *table_memory, int num) {
 
 }
 
+void firstfit(Allocation *aloc, int *table_memory, int num) {
+    int temp;
+}
+
 // char** inputstr(char * userinput){
 //     size_t i = 0;
 //     char *str_array[] = {};
