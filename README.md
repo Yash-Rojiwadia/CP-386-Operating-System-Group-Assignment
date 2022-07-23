@@ -3,6 +3,7 @@ Assignment 4 on banker's algorithm
 
 Contributon:
 Jay Vora:
+
 Type Stuct 
 Bestfit()
 Firstfit()
@@ -11,6 +12,7 @@ Main()
 Stat()
 
 Yash Rojiwadia:
+
 Main()
 releasememory()
 emptystat()
@@ -24,6 +26,9 @@ Yash Rojiwadia | 203039360
 
 Makefile:
 image.png
+
+Screenshots:
+
 
 About us:
 Jay Vora :
