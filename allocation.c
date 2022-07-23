@@ -46,10 +46,6 @@ typedef struct h
 
 
 
-int allocate_mem (){
-   
-    }
-
 // char** inputstr(char * userinput){
 //     size_t i = 0;
 //     char *str_array[] = {};
