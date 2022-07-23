@@ -68,14 +68,19 @@ static void empty_stat(int *table_memory,int num){
     }
 }
 
-void stat(int num) {
+void stat(int num, int *table_memory) {
     printf("Partitions [Allocated memory = %d]:\n", alloc);
-            for (int i = 0 ; i < a_count; i++){
-                if (strcmp(p[i].command, "Free") != 0){
-                    printf("Address [%d:%d] Process %s\n", p[i].start, p[i].end, p[i].command);  
-                }
-                       
-            }      
+    for (int i = 0 ; i < a_count; i++){
+        if (strcmp(p[i].command, "Free") != 0){
+            printf("Address [%d:%d] Process %s\n", p[i].start, p[i].end, p[i].command);  
+        }
+               
+    }
+    empty_stat(*table_memory ,num);
+    printf("Holes [Free memory = %d]\n", (num - alloc));  
+    for (int i = 0; i < total_a_count; i++) {
+        printf("Address [%d:%d] len = %d\n", p1[i].start, p1[i].end,p1[i].size);
+    }
 }
 
 void release_mem (Allocation *aloc,int *table_memory,int num){
@@ -85,13 +90,13 @@ void release_mem (Allocation *aloc,int *table_memory,int num){
 
     while (a < num && !flag){
         if (table_memory[a] == aloc->p_number){
-            printf("releasing memory for process %c%d", aloc->p_letter,aloc->p_number);
+            printf("releasing memory for process %s%d", aloc->p_letter,aloc->p_number);
             b=a;
             while (table_memory[b] == aloc->p_number){
                 table_memory[b] = -1;
                 b++;
             }
-            printf("Successfully released memory for process %c%d",aloc->p_letter,aloc->p_number);
+            printf("Successfully released memory for process %s%d",aloc->p_letter,aloc->p_number);
             flag = true;
         }
         a++;
@@ -138,7 +143,7 @@ void bestfit(Allocation *aloc, int *table_memory, int num) {
 
     }
     else {
-        printf("Successfully allocated %d to process %c%d \n", aloc->mem, aloc->p_letter, aloc->p_number);
+        printf("Successfully allocated %ld to process %s%d \n", aloc->mem, aloc->p_letter, aloc->p_number);
         int i = aloc->f_index;
         while (i < aloc->l_index) {
             table_memory[i] = aloc->p_number;
@@ -276,14 +281,17 @@ void main(int argc, char *argv[]) {
     if (! strncmp(aloc.command, rq, strlen(rq)) ){
         if (! strncmp(aloc.algo, first, strlen(first))){
             //firstfit();
+            firstfit(&aloc,table_memory,num);
         }
         else if (! strncmp(aloc.algo, best, strlen(best)))
         {
             /* bestfit(); */
+            bestfit(&aloc,table_memory,num);
         }
         else if (! strncmp(aloc.algo, worst, strlen(worst)))
         {
             /* worstfit(); */
+            worstfit(&aloc,table_memory,num);
         }
         
         
