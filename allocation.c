@@ -28,10 +28,14 @@ typedef struct p
 typedef struct allocation
 {
     char command[10];
-    char p_number[3];
-    long n
-
-};
+    char p_letter[3];
+    int p_number;
+    long mem;
+    char algo;
+    int f_index;
+    int l_index;
+    int length;
+} Allocation;
 
 
 typedef struct h
@@ -41,19 +45,7 @@ typedef struct h
 
 } Holes;
 
-typedef struct allocation 
-{
-    char command[100];
-    char pid[100];
-    int memNeeded;
-    char format[20];
-    int iPID;
 
-    int firstIndex; 
-    int lastIndex;
-    int length;
-
-} Allocation; 
 
 int allocate_mem (){
    
@@ -74,47 +66,54 @@ int allocate_mem (){
 //     }
 //     return str_array;
 // }
+Process *p = NULL;
+Holes *h = NULL;
 
 void main(int argc, char *argv[]) {
-    char input;
-    input = atoi(argv[1]);
-    Process *p = NULL;
-    Holes *h = NULL;
-
-    printf("Allocated %d bytes of memory.\n", input);
+   
+    char input = argv[1];
+    Allocation aloc;
+    char *ptr;
+    int num = strtol(input,&ptr,10);
+    printf("Allocated %d bytes of memory.\n", num);
 
     //char ** temp = inputstr("RQ P3 1200000 B");
     //printf("results : %s",temp) ;
     //printf("\n");
-    printf("command>");
+   
 
     //get user input
+    char another_inp[] = {}; 
     do {
         
         printf("command>");
 
         //read until usr presses enter
-        fgets(usrInput, 30, stdin);
+        char *line = NULL;
+        size_t len = 0;
+        ssize_t linesize = 0;
+        linesize = getline(&line, &len, stdin);
         char *token;
-        token = strtok(usrInput, " ");
+        token = strtok(&line, " ");
         int j = 0;
 
         while (token != NULL){
             if (j == 0){
-                strcpy(userArrgs.command, token);
-                uppercase(userArrgs.command);
+                strcpy(aloc.command, token);
+                
             }else if (j == 1){
-                strcpy(userArrgs.pid, token);
-                uppercase(userArrgs.pid);
-                userArrgs.iPID = (int) userArrgs.pid[1];
+                strcpy(aloc.p_letter, token);
+               
+                aloc.p_number = (int) aloc.p_number;
             }else if (j == 2){
-                userArrgs.memNeeded = (int) atoi(token);
+                aloc.mem = (int) atoi(token);
             }else if(j == 3){
-                strcpy(userArrgs.format, token); 
-                uppercase(userArrgs.format);  
+                strcpy(aloc.algo, token); 
+                  
             }
             j++;
             token = strtok(NULL, " ");  
         }
 
+    }
 }
