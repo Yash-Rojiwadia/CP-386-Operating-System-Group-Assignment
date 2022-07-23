@@ -126,7 +126,30 @@ void bestfit(Allocation *aloc, int *table_memory, int num) {
 }
 
 void firstfit(Allocation *aloc, int *table_memory, int num) {
-    int temp;
+    int temp = 0;
+    int counter = 0;
+    bool flag = false;
+    for (int i = 0; i < num; i ++) {
+        
+        for (int j = 0; j < aloc->mem; j++) {
+            temp ++;
+            if (counter >= p->size) {
+                p[a_count].start = aloc->f_index;
+                p[a_count].end = aloc->l_index;
+                strcpy(p[a_count].command, aloc->command);
+                a_count++;
+
+                alloc += aloc->l_index - aloc->f_index;
+                temp = 0;
+                flag = true;
+                break;
+            }
+            
+        }
+        if (!flag) {
+            printf("couldn't find a big enough hole to the required size of process. \n");
+        }
+    }
 }
 
 // char** inputstr(char * userinput){
