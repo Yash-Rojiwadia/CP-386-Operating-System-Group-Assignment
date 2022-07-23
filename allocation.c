@@ -48,9 +48,6 @@ int alloc;
 int total_a_count;
 int a_count;
 
-//functions
-void stat(int num);
-static void empty_stat(int *table_memory,int num);
 
 
 static void empty_stat(int *table_memory,int num){
