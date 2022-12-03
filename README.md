@@ -1,5 +1,5 @@
-# CP-386-A4
-Assignment 4 on banker's algorithm 
+# CP-386-Operating-System-Group-Assignment
+Assignment 4 on Banker's algorithm
 
 Contributon:
 Jay Vora:
@@ -20,15 +20,12 @@ Firstfit()
 Worstfit()
 
 
-jay vora | 203321900
+Jay Vora | 203321900
 
 Yash Rojiwadia | 203039360
 
-Makefile:
-image.png
-
 Screenshots:
-
+image.png
 
 About us:
 Jay Vora :
