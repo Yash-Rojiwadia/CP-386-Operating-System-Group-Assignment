@@ -28,8 +28,8 @@ Screenshots:
 image.png
 
 About us:
-Jay Vora :
+- Jay Vora :
 I am a 3rd Year Computer Science Major student at Wilfrid Laurier University.
 
-Yash Rojiwadia :
+- Yash Rojiwadia :
 I am a 3rd year Computer Science Major student at Wilfrid Laurier University.
