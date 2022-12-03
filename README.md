@@ -2,21 +2,21 @@
 Assignment 4 on Banker's algorithm
 
 Contributon:
-Jay Vora:
+- Jay Vora:
 
-Type Stuct 
-Bestfit()
-Firstfit()
-Worstfit()
-Main()
+Type Stuct, 
+Bestfit(),
+Firstfit(),
+Worstfit(),
+Main() &
 Stat()
 
-Yash Rojiwadia:
+- Yash Rojiwadia:
 
-Main()
-releasememory()
-emptystat()
-Firstfit()
+Main(),
+releasememory(),
+emptystat(),
+Firstfit() &
 Worstfit()
 
 
