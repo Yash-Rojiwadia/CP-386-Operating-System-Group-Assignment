@@ -1,35 +1,14 @@
-# CP-386-Operating-System-Group-Assignment
-Assignment 4 on Banker's algorithm
+# Banker's Algorithm - CP-386 Operating System Group Assignment
+This project is a group assignment for the CP-386 Operating System course. The goal of this assignment is to implement the Banker's Algorithm, a resource allocation and deadlock avoidance algorithm. 
 
-Contributon:
-- Jay Vora:
+## Contributors:
+- Yash Rojiwadia: Main(), release_memory(), empty_stat(), First-fit() & Worst-fit()
+- Jay Vora: Type Struct, Best-fit(), First-fit(), Worst-fit(), Main() & Stat()
 
-Type Stuct, 
-Bestfit(),
-Firstfit(),
-Worstfit(),
-Main() &
-Stat()
+## Screenshots:
+![](image.png)
 
-- Yash Rojiwadia:
+## About the contributors:
 
-Main(),
-releasememory(),
-emptystat(),
-Firstfit() &
-Worstfit()
-
-
-Jay Vora | 203321900
-
-Yash Rojiwadia | 203039360
-
-Screenshots:
-image.png
-
-About us:
-- Jay Vora :
-I am a 3rd Year Computer Science Major student at Wilfrid Laurier University.
-
-- Yash Rojiwadia :
-I am a 3rd year Computer Science Major student at Wilfrid Laurier University.
+- Jay Vora: I am a 3rd Year Computer Science Major student at Wilfrid Laurier University.
+- Yash Rojiwadia: I am a 3rd year Computer Science Major student at Wilfrid Laurier University.
